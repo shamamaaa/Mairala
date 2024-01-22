@@ -1,0 +1,9 @@
+﻿@model Project
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="~/assets/images/project/@Model.ImageUrl" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">@Model.Title</h5>
+    <p class="card-text">@Model.Subtitle</p>
+    <a asp-action="index" asp-controller="project" class="btn btn-primary">Go back</a>
+  </div>
+</div>

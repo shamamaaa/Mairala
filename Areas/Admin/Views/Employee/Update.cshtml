@@ -1,0 +1,48 @@
+﻿@model UpdateEmployeeVm
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Update</h4>
+        <form class="forms-sample" method="post" enctype="multipart/form-data">
+            <img src="~/assets/images/@Model.ImageUrl" style="width:100px;height:100px;"/>
+            <input type="hidden" asp-for="ImageUrl">
+            <div class="form-group">
+                <label asp-for="Photo">Photo</label>
+                <input class="form-control" asp-for="Photo" placeholder="Photo">
+                <span class="text-danger" asp-validation-for="Photo"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name">Username</label>
+                <input type="text" class="form-control" asp-for="Name" placeholder="Name">
+                <span class="text-danger" asp-validation-for="Name"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Surname">Surname</label>
+                <input type="text" class="form-control" asp-for="Surname" placeholder="Surname">
+                <span class="text-danger" asp-validation-for="Surname"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TwLink">TwLink</label>
+                <input type="text" class="form-control" asp-for="TwLink" placeholder="TwLink">
+                <span class="text-danger" asp-validation-for="TwLink"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FbLink">FbLink</label>
+                <input type="text" class="form-control" asp-for="FbLink" placeholder="FbLink">
+                <span class="text-danger" asp-validation-for="FbLink"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LinLink">LinLink</label>
+                <input type="text" class="form-control" asp-for="LinLink" placeholder="LinLink">
+                <span class="text-danger" asp-validation-for="LinLink"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PositionId">Position</label>
+                <select class="form-control" asp-for="PositionId" asp-items="Model.Positions">
+                </select>
+                <span class="text-danger" asp-validation-for="PositionId"></span>
+            </div>
+            <button type="submit" class="btn btn-primary mr-2">Submit</button>
+            <a asp-action="index" asp-controller="employee" class="btn btn-light">Cancel</a>
+        </form>
+    </div>
+</div>

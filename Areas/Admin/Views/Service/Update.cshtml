@@ -1,0 +1,25 @@
+﻿@model CreateServiceVm
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Update</h4>
+        <form class="forms-sample" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label asp-for="Name">Username</label>
+                <input type="text" class="form-control" asp-for="Name" placeholder="Name">
+                <span class="text-danger" asp-validation-for="Name"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Icon">Icon</label>
+                <input type="text" class="form-control" asp-for="Icon" placeholder="Icon">
+                <span class="text-danger" asp-validation-for="Icon"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description">Description</label>
+                <input type="text" class="form-control" asp-for="Description" placeholder="Description">
+                <span class="text-danger" asp-validation-for="Description"></span>
+            </div>
+            <button type="submit" class="btn btn-primary mr-2">Submit</button>
+            <a asp-action="index" asp-controller="service" class="btn btn-light">Cancel</a>
+        </form>
+    </div>
+</div>

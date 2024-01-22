@@ -1,0 +1,57 @@
+﻿@model List<Service>
+@{
+    int count = 0;
+}
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title"> Table</h4>
+        <a asp-action="create" asp-controller="service" class="btn btn-outline-secondary btn-rounded btn-icon">
+            <i class="mdi mdi-plus"></i>
+        </a>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>
+                            No
+                        </th>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Settings
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        count++;
+                        <tr>
+                            <td>
+                                @count
+                            </td>
+                            <td>
+                                @item.Name
+                            </td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <a asp-action="delete" asp-controller="service" class="btn btn-outline-secondary">
+                                        <i class="mdi mdi-delete"></i>
+                                    </a>
+                                    <a asp-action="update" asp-controller="service" class="btn btn-outline-secondary">
+                                        <i class="mdi mdi-border-color"></i>
+                                    </a>
+                                    <a asp-action="detail" asp-controller="service" class="btn btn-outline-secondary">
+                                        <i class="mdi mdi-book-open-page-variant"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
